@@ -81,6 +81,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+React JS is a library within JavaScript that allows coders to create components that have all of the code in one place, instead of having to tab back and forth through HTML, CSS and JavaScript files. These components also have convenient code that looks just like HTML (which is JSX) and CSS(by using styled-components).
+
 1. Describe component state.
+
+Component state is all of the data in a given component. This data can be added to state via stateful variables using the "useState" function from React, or by grabbing data from an API using "axios.get".
+
 1. Describe props.
+
+"props" is an abbreviation for properities, and is an argument used to pass variables from parent to child components.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side effects are things that running something like "axios.get" will do, that may be unwanted (for instance, grabbing data multiple times). We can stop these side effects from occurring by using the "useEffect" function from React. It allows two parameters, the first is a callback function, and the second is a dependency (usually a variable, and if that variable (stored in state or passed by props) changes, useEffect will re-run, or an empty array if you only want it to run once upon loading the page).
