@@ -21,6 +21,7 @@ const App = () => {
   const StyledHeader = styled.h1 `
   font-size: 3rem;
   text-shadow: 2px 2px ${pr => pr.theme.darkColor};
+  letter-spacing: 3px;
   `;
   
   //getting data from API with axios, useEffect makes sure it's only attempted once

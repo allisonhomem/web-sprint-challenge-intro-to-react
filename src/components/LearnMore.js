@@ -7,6 +7,23 @@ const LearnMore  = (props) => {
     //grabs object from parent using props
     const { character } = props;
 
+    //CSS stylings from styled components
+    //styled box
+    const StyledBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    `;
+    //styled about button
+    const StyledButton = styled.button `
+    font-family: ${pr => pr.theme.fontMain};
+    background-color: ${pr => pr.theme.yellowColor};
+    color: ${pr => pr.theme.darkColor};
+    font-size: 1rem;
+    padding: 2%;
+    align-self: flex-end;
+    `;
+
     //creates stateful variable for button
     const [ enabled, setEnabled ] = useState(true);
 
@@ -16,11 +33,11 @@ const LearnMore  = (props) => {
     };
 
     return(
-        <div>
-           {enabled && <button onClick={clicky}>about</button>} 
+        <StyledBox theme={theme}>
+           {enabled && <StyledButton theme={theme} onClick={clicky}>about</StyledButton>} 
            {!enabled && <CharacterInfo character={character}/>}
-           {!enabled && <button onClick={clicky}>- see less</button>}
-        </div>
+           {!enabled && <StyledButton onClick={clicky}>- see less</StyledButton>}
+        </StyledBox>
     );
 }
 

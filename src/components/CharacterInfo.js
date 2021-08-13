@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-import theme from '../theme/index.js';
 
 const CharacterInfo = (props) => {
     //grabs object from parent using props
@@ -22,7 +20,7 @@ const CharacterInfo = (props) => {
              .catch(err => {
                  console.error('uh-oh... failed to retrieve data');
              })
-    },[]);
+    },[character.homeworld]);
 
     //function to get species info using axios and useEffect to prevent multiple data grabs
     useEffect(() => {
@@ -33,22 +31,22 @@ const CharacterInfo = (props) => {
              .catch(err => {
                 console.error('uh-oh... failed to retrieve data');
              })
-        },[]);
+        },[character.species]);
 
     //function to get starships info using axios and useEffect to prevent multiple data grabs
-    const theShips = [];
     useEffect(() => {
+    const theShips = [];
     (character.starships.length!==0) && character.starships.forEach(ship => {
         axios.get(ship)
              .then(res => {
                 theShips.push(res.data.model);
+                setStarships(theShips);
              })
              .catch(err => {
                 console.error('uh-oh... failed to retrieve data');
              })
         })
-    setStarships(theShips);
-    }, []);
+    }, [character.starships]);
 
     return(
         <div>
@@ -56,7 +54,7 @@ const CharacterInfo = (props) => {
             <p>Species: {species}</p>
             <p>Home Planet: {planet}</p>
             <p>Stars in: {character.films.map((film) => {return `"${film}" + `})}</p>
-            <p>Seen flying: {(character.starships.length !== 0) ? starships.map(ship => {return `${ship} + `}):`never`}</p>
+            <p>Seen flying: {(character.starships.length !== 0) ? starships.map(ship => {return `${ship} + `}):`with friends!`}</p>
         </div>
     );
 }
