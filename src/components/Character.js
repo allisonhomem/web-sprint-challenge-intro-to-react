@@ -2,6 +2,7 @@ import React from 'react';
 import LearnMore from './LearnMore.js';
 
 const Character = (props) => {
+    //grabs object from parent using props
     const { character } = props;
 
     return(
