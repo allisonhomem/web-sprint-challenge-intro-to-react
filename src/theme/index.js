@@ -4,7 +4,6 @@ const theme = {
     mediumColor: '#333533',
     yellowColor: '#f5cb5c',
     fontMain: 'Dosis',
-
 };
 
 export default theme;

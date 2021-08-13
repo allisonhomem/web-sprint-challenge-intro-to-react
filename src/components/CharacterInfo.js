@@ -11,7 +11,7 @@ const CharacterInfo = (props) => {
     const [ starships, setStarships ] = useState([]);
    
     
-    //function to get homeplanet info using axios and useEffect to prevent multiple data grabs
+    //function to get homeplanet info using axios, wrapped in useEffect to prevent multiple data grabs
     useEffect(() => {
         axios.get(character.homeworld)
              .then(res => {
@@ -22,7 +22,7 @@ const CharacterInfo = (props) => {
              })
     },[character.homeworld]);
 
-    //function to get species info using axios and useEffect to prevent multiple data grabs
+    //function to get species info using axios, wrapped in useEffect to prevent multiple data grabs
     useEffect(() => {
         axios.get(character.species)
              .then(res => {
@@ -33,7 +33,7 @@ const CharacterInfo = (props) => {
              })
         },[character.species]);
 
-    //function to get starships info using axios and useEffect to prevent multiple data grabs
+    //function to get starships info by looping through array and using axios, wrapped in useEffect to prevent multiple data grabs
     useEffect(() => {
     const theShips = [];
     (character.starships.length!==0) && character.starships.forEach(ship => {

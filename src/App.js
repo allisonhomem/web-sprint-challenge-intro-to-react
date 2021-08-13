@@ -5,6 +5,7 @@ import './App.css';
 import styled from 'styled-components';
 import theme from '../src/theme/index.js';
 
+
 const App = () => {
   //creating stateful variable to hold array of characters
   const [ characters, setCharacters ] = useState([]);

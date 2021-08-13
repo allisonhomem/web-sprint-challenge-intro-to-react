@@ -31,6 +31,7 @@ const Character = (props) => {
     color: ${pr => pr.theme.darkColor};
     padding: 0 2%;
     `;
+    
     return(
         //styled div displays each character's name and a button to let the user choose to learn more
         <StyledBox theme={theme}>

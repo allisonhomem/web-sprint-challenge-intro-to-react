@@ -14,7 +14,8 @@ const LearnMore  = (props) => {
     flex-direction: column;
     width: 70%;
     `;
-    //styled about button
+
+    //styled buttons
     const StyledButton = styled.button `
     font-family: ${pr => pr.theme.fontMain};
     background-color: ${pr => pr.theme.yellowColor};
