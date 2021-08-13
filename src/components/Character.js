@@ -1,5 +1,7 @@
 import React from 'react';
 import LearnMore from './LearnMore.js';
+import styled from 'styled-components';
+import theme from '../theme/index.js';
 
 const Character = (props) => {
     //grabs object from parent using props

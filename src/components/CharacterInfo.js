@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import theme from '../theme/index.js';
 
 const CharacterInfo = (props) => {
     //grabs object from parent using props

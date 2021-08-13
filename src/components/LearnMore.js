@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import CharacterInfo from './CharacterInfo.js';
+import styled from 'styled-components';
+import theme from '../theme/index.js';
 
 const LearnMore  = (props) => {
     //grabs object from parent using props
